@@ -16,7 +16,7 @@ const milRef = useRef(null)
 
 useEffect (()=>{
     if(act){
-        minStart()
+       
         secStart()
         milliStart()
     }
@@ -29,6 +29,10 @@ const secStart =() =>{
     secRef.current = setInterval(()=>{
       setsec(prev =>{
           if(prev>=60){
+             
+              setmin(min=>{
+               return   min+1
+              })
               return 0
           }
           return prev+1
@@ -38,18 +42,6 @@ const secStart =() =>{
 }
 
 
-const minStart =() =>{
-    minRef.current = setInterval(()=>{
-        setmin(prev => {
-            if(sec >= 60){
-                return prev+1
-            }
-           
-        }    
-            )
-    }
-    )
-}
 
 
 const milliStart =() =>{
@@ -61,7 +53,7 @@ const milliStart =() =>{
         return prev+1
     }    
         )
-    },100)
+    },10)
 }
 
 
@@ -88,7 +80,7 @@ const handleClear = ()=>{
 
 <h1>
 
-<span>{min}min      </span><span>{sec}</span>s  <span>{millisec}ms</span>
+<span>{min}min</span><span>{sec}</span>s  <span>{millisec}ms</span>
 
 
 </h1>
@@ -101,7 +93,7 @@ const handleClear = ()=>{
     </button>
     
     <button onClick ={()=>{
-        minStart()
+       
        secStart()
        milliStart()
        setact(!act)
@@ -111,11 +103,11 @@ const handleClear = ()=>{
 
     <button onClick ={()=>{
       handleClear();
-      setmin(0)
+      setcount(0)
       setsec(0)
       setmillisec(0)
     }}>
-        restart
+        reset
     </button>
 
 </div>
