@@ -1,0 +1,22 @@
+{
+  "employees": [
+    {
+      "name": "Gurubilli siva",
+      "age": "30",
+      "role": "developer",
+      "address": "6-13/B,asramam veedhi\ndurgada, gollaprollu mandal",
+      "salary": "40000000",
+      "ismarry": true,
+      "id": 1
+    },
+    {
+      "name": "Gurubilli vineela",
+      "age": "22",
+      "role": "developer",
+      "address": "6-13/B,asramam veedhi\ndurgada, gollaprollu mandal",
+      "salary": "600000",
+      "ismarry": true,
+      "id": 2
+    }
+  ]
+}

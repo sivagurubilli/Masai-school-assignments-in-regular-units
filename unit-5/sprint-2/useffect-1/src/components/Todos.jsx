@@ -1,7 +1,5 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
 import axios from "axios"
 
 
@@ -9,14 +7,17 @@ const Todo = () => {
     const [count, setCount] = useState(0)
     const [todos,settodos]=useState([])
     const [totalcount,settotalcount] = useState(0)
-    const [newtodo,setnewtodo]=useState("")
+    const [newtodo,setnewtodo]=useState({
+     value:"",
+     isCompleate:false
+    })
     const [page,setpage] = useState(1)
     const [limit,setlimit] = useState(5)
     
     useEffect(()=>{
       const gettodo =async()=>{
           var d = await axios.get(`http://localhost:8080/todos?_page=${page}&_limit=${limit}`)
-     console.log(d.data)
+     
           settodos(d.data)
      settotalcount(Number(d.headers['x-total-count']))
         }
@@ -24,9 +25,20 @@ const Todo = () => {
        
       },[page,limit])
     
+ const handlech=(e)=>{
+   let {name,value} =e.target
+   setnewtodo({...newtodo,[name]:value})
+}
+     
+    const settodo =()=>{
+     axios.post("http://localhost:8080/todos",newtodo).then(r=>
+   settodos([...todos,r.data])
+     )
+     setnewtodo("")
     
+    }
     
-     const settodo=()=>{
+    {/*} const settodo=()=>{
     fetch('http://localhost:8080/todos',{
       method:'POST',
       headers:{
@@ -42,15 +54,15 @@ const Todo = () => {
       setnewtodo("")
     })
     
-     }
+     }*/}
     
       return (
         <>
         <div className="App" onClick={()=>setCount(count+1)}>
          
     
-           <input value={newtodo} onChange={(e)=>setnewtodo(e.target.value)} />
-           <button onClick={()=>settodo()}>++</button>
+           <input  name="value" onChange={handlech} />
+           <button onClick={()=>settodo()}>save</button>
         </div>
         {todos.map((e)=>{
             return <h1 key ={e.id}>{e.id}::{e.value}</h1> 
