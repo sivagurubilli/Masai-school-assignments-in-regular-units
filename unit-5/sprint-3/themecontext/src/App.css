@@ -1,0 +1,33 @@
+nav{
+  width:90%;
+  height: 40%;
+  margin:auto;
+  display: 
+  flex;
+  justify-content: end;
+}
+
+form{
+  width: 40%;
+  margin: 2rem auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+input{
+  margin: 0.5rem 0;
+}
+
+
+button{
+  cursor :pointer;
+  padding: 0.3rem o.6rem;
+
+}
+
+footer{
+  width:90%;
+  text-align: center;
+  margin:auto;
+}
