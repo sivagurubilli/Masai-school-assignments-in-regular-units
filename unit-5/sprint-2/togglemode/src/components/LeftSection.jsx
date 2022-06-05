@@ -25,7 +25,7 @@ export default LeftSection
 
 
 const Leftnav = styled.div`
-width:6%;
+width:30%;
 border:1px solid red;
 height:100vh;
 text-align:center;

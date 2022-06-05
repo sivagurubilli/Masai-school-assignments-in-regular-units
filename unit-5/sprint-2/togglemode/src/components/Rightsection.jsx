@@ -38,7 +38,7 @@ export default Rightsection;
 
 
 const Rightmain = styled.div`
-width:40% ;`;
+width:100% ;`
 
 
 const Top = styled.div`

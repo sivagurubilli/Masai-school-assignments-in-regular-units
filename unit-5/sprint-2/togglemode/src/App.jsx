@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import logo from './logo.svg'
 import './App.css'
 import LeftSection from './components/LeftSection'
 import Rightsection from './components/Rightsection'
@@ -10,10 +9,13 @@ const App =() =>{
   return (
    
       <Main>
-     
+     <div style={{display:"flex"}}>
+
+    
       <LeftSection />
-      <spn>  <Rightsection /></spn>
-     
+      <Rightsection />
+
+</div>
       </Main>
    
   )
@@ -23,4 +25,5 @@ export default App;
 
 const Main = styled.div`
  dispaly:flex;
+ flex-direction:row;
  border:1px solid red`;
