@@ -10,23 +10,23 @@ const reducer =(state = initialState,action) =>{
 
         case types.GET_TODO_LIST_REQUEST:
             return{
-...state,
-isLoading:true,
-isError:false,
+            ...state,
+               isLoading:true,
+                 isError:false,
 
             }
             case types.GET_TODO_LIST_SUCCESS:
                 return {
                     ...state,
                     todos:payload,
-isLoading:false,
-isError:false,
+                 isLoading:false,
+                isError:false,
                 }
                 case types.GET_TODO_LIST_FAILURE:
                     return{
                         ...state,
-isLoading:false,
-isError:true,
+                  isLoading:false,
+                   isError:true,
                     }
 
 
