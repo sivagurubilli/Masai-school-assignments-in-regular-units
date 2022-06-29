@@ -13,7 +13,6 @@ const Login = () => {
 e.preventDefault()
 
 if(email && password){
- dispatch(login{email,password})
 }
   }
   return (
