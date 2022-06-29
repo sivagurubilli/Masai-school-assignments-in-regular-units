@@ -5,7 +5,7 @@ import axios from "axios"
 
 
 
-const getTodos =()=> (dispatch) =>{
+const getTodos =() => (dispatch) =>{
   dispatch({type:types.GET_TODO_LIST_REQUEST});
   axios.get("/todos").then((r)=>
   

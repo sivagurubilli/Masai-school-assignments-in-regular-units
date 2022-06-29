@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Admin from './Admin'
+import Admin from './Login'
 import Books from './Books'
 import Editbook from './Editbook'
 import Singlebook from './Singlebook'
@@ -20,7 +20,7 @@ const Mainroutes = () => {
     </Route>
     <Route path ="/books/:id/edit" element={<Editbook />}>
     </Route>
-    <Route path ="/admin" element={<Admin />}>
+    <Route path ="/admin" element={<Login />}>
     </Route>
     <Route path='*' element={<h2>page not found</h2>}></Route>
 

@@ -1,16 +1,15 @@
 import React from 'react'
 import { useDispatch,useSelector } from 'react-redux'
 
-const Todolist = ({todos}) => {
+const Todolist = () => {
   
-
+  const todos = useSelector(state=>state.todos1)
 
   return (
     <div>
 {todos.map((e)=>{
-  return<h1>{e.task}</h1>
+ return <h2 key ={e.id}>{e.task}</h2>
 })}
-
 
     </div>
   )

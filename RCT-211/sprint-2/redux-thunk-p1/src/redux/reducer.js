@@ -1,10 +1,12 @@
 import * as types from "./actiontypes"
-const initialState ={
-    todos:[],
+const initialstate ={
+    todos1:[],
     isLoading:false,
     isError:false,
 }
-const reducer =(state = initialState,action) =>{
+
+
+const reducer =(state = initialstate,action) =>{
     const {type,payload} = action;
     switch(type){
 
@@ -18,9 +20,9 @@ isError:false,
             case types.GET_TODO_LIST_SUCCESS:
                 return {
                     ...state,
-                    todos:payload,
-isLoading:false,
-isError:false,
+                    todos1:payload,
+                isLoading:false,
+                isError:false,
                 }
                 case types.GET_TODO_LIST_FAILURE:
                     return{
@@ -38,10 +40,10 @@ isError:true,
             
                         }
                         case types.ADD_TODO_SUCCESS:
-                            let newtodo = [...state.todos,payload]
+                            let newtodo = [...state.todos1,payload]
                             return {
                                 ...state,
-                                todos:newtodo,
+                                todos1:newtodo,
             isLoading:false,
             isError:false,
                             }
@@ -52,9 +54,11 @@ isError:true,
             isError:true,
                                 }
 
-
+ default :
+ return state
 
                             }
+                
 }
 
 export {reducer}

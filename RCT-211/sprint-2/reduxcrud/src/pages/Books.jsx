@@ -4,27 +4,14 @@ import { useEffect } from 'react'
 import { useDispatch,useSelector } from 'react-redux'
 import Booklist from '../components/Booklist'
 import Filtersort from '../components/Filtersort'
-import { getBooks } from '../redux/action'
+import { getBooks } from '../redux/Appreducer/action'
 import styled from "styled-components"
 import { useSearchParams } from 'react-router-dom'
 
 
 const Books = () => {
-  const [searchParams] = useSearchParams()
-const dispatch  = useDispatch()
-    const books = useSelector(state=>state.books)
-  useEffect(()=>{
-    const urlCategory = searchParams.getAll("category");
-    const urlSort = searchParams.get("sortBy")
-
-    if(books.length===0 && (!urlCategory || !urlSort)  ){
-
-    
-    dispatch(getBooks())
-}
-  },[])
-
-console.log(books)
+  
+  
 
   return (
     <div>
@@ -35,7 +22,7 @@ console.log(books)
 
             </FilterSortWrapper>
              <BookListWrapper>
-        <Booklist  books ={books}/>
+        <Booklist />
         </BookListWrapper>
         </BookPageWrapper>
 

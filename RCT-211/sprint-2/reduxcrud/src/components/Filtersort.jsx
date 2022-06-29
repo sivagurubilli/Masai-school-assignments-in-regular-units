@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import {useDispatch} from "react-redux"
 
-import { getBooks } from '../redux/action'
+import { getBooks } from '../redux/Appreducer/action'
 
 
 
@@ -36,35 +36,28 @@ const handleCheckbox =(e)=>{
  }
 
  useEffect(()=>{
-    if(category){
-        setsearchParams({category})
-    dispatch(getBooks({params:{category}}))
+    if(category || sortBy){
+        let params ={}
+        category && (params.category = category);
+        sortBy && (params.sortBy  = sortBy)
+        setsearchParams(params)
     }
- },[category,dispatch,searchParams])
+ },[category,dispatch,searchParams,sortBy])
 
 
- useEffect(()=>{
+ {/*useEffect(()=>{
     if(sortBy){
         const params ={
             category : searchParams.getAll("category"),
             sortBy,
         }
 
-const getBooksparams ={
-    params :{
-        category : searchParams.getAll("category"),
-        _sort:"releaseyear",
-        _order:sortBy,
-    }
-}
-
 setsearchParams(params)
-dispatch(getBooks(getBooksparams))
     }
  },[searchParams,dispatch,setsearchParams,sortBy])
 
 
-
+*/}
 
 
   return (

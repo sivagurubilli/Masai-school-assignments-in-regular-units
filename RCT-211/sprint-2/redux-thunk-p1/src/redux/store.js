@@ -8,4 +8,5 @@ const store =legacy_createStore(reducer,
     
     composeEnhancers(applyMiddleware(thunk)));
 
-export {store}
+
+    export {store}

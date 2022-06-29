@@ -11,25 +11,23 @@ import Todolist from './Todolist'
 const Todos = () => {
 
 const dispatch = useDispatch();
-  const todos = useSelector(state=>state.todos)
-    
-
-
+ 
     useEffect(()=>{
-      if(todos.length === 0|| todos == "undefined"){
-
+    
       
       dispatch(getTodos())
-      }
+    
     },[])
   
+  
+
   return (
     <div>Todos
 
      
-      <br />
+     
       <Addtodo />
-      <Todolist todos={todos} />
+      <Todolist />
     </div>
   )
 }
