@@ -1,0 +1,90 @@
+
+
+
+{
+    "books":[
+        {
+            "id":1,
+            "author":"typicode",
+            "noofchapters":8,
+            "coverphoto":"",
+            "bookname":"full-stack",
+            "category":"novel",
+            "releaseyear":2019,
+            "chapters":[
+                {"name":"HTML","pages":35},
+            {"nme":"CSS","pages":30}
+            
+            ]
+        },
+        {
+            "id":2,
+            "author":"typicode",
+            "noofchapters":8,
+            "coverphoto":"",
+            "bookname":"full-stack",
+            "category":"fiction",
+            "releaseyear":2017,
+            "chapters":[
+                {"name":"HTML","pages":35},
+            {"nme":"CSS","pages":30}
+            
+            ]
+        },
+        {
+            "id":3,
+            "author":"typicode",
+            "noofchapters":8,
+            "coverphoto":"",
+            "bookname":"full-stack",
+            "category":"fiction",
+            "releaseyear":2016,
+            "chapters":[
+                {"name":"HTML","pages":35},
+            {"nme":"CSS","pages":30}
+            
+            ]
+        }, {
+            "id":4,
+            "author":"typicode",
+            "noofchapters":8,
+            "coverphoto":"",
+            "bookname":"full-stack",
+            "category":"novel",
+            "releaseyear":2015,
+            "chapters":[
+                {"name":"HTML","pages":35},
+            {"nme":"CSS","pages":30}
+            
+            ]
+        },
+        {
+            "id":5,
+            "author":"typicode",
+            "noofchapters":8,
+            "coverphoto":"",
+            "bookname":"full-stack",
+            "category":"fiction",
+            "releaseyear":2021,
+            "chapters":[
+                {"name":"HTML","pages":35},
+            {"nme":"CSS","pages":30}
+            
+            ]
+        },
+        {
+            "id":6,
+            "author":"typicode",
+            "noofchapters":8,
+            "coverphoto":"",
+            "bookname":"full-stack",
+            "category":"motivation",
+            "releaseyear":2014,
+            "chapters":[
+                {"name":"HTML","pages":35},
+            {"nme":"CSS","pages":33}
+            
+            ]
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+  "todos": [
+    {
+      "task": "srija",
+      "status": true,
+      "id": 2
+    },
+    {
+      "task": "vinnee",
+      "status": false,
+      "id": 3
+    },
+    {
+      "task": "sivaa",
+      "status": false,
+      "id": 4
+    },
+    {
+      "task": "ddd",
+      "status": false,
+      "id": 5
+    },
+    {
+      "task": "eat bamnan",
+      "status": false,
+      "id": 6
+    },
+    {
+      "task": "gym karo",
+      "status": false,
+      "id": 7
+    },
+    {
+      "task": "dd",
+      "status": false,
+      "id": 8
+    },
+    {
+      "task": "ddffg",
+      "status": false,
+      "id": 9
+    }
+  ]
+}
