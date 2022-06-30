@@ -3,7 +3,7 @@
 import React,{useEffect, useState} from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { removeTodoFailure, removeTodoRequest, removeTodoSuccess, toggleTodoFailure, toggleTodoRequest, toggleTodoSuccess } from '../redux/action'
+import { removeTodoFailure, removeTodoRequest, removeTodoSuccess, toggleTodoFailure, toggleTodoRequest, toggleTodoSuccess } from '../redux/todoreducer/action'
 import axios from 'axios'
 const Singletodo = () => {
 const navigate = useNavigate()

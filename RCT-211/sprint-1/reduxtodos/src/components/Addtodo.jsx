@@ -3,7 +3,7 @@
 import axios from 'axios'
 import React,{useState} from 'react'
 import { useDispatch } from 'react-redux'
-import { addTodoFailure, addTodoRequest, addTodoSuccess } from '../redux/action'
+import { addTodoFailure, addTodoRequest, addTodoSuccess } from '../redux/todoreducer/action'
 
 const Addtodo = () => {
     const [todo,settodo] = useState("")
