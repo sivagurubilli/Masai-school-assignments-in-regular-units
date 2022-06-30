@@ -18,7 +18,8 @@ const reducer =(state = initialstate,action) =>{
         case types.LOGIN_BOOKS_REQUEST:
             return {
                 ...state,
-                isLoading:true
+                isLoading:true,
+                isError:false
             }
 
             case types.LOGIN_BOOKS_SUCCESS:
@@ -32,7 +33,10 @@ const reducer =(state = initialstate,action) =>{
                 case types.LOGIN_BOOKS_FAILURE:
                     return{
                         isLoading:false,
-                        isError:true
+                        isError:true,
+                        isAuth:false,
+                        token:""
+
                     }
         default:
             return state

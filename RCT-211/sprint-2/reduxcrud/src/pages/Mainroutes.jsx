@@ -1,10 +1,10 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Admin from './Login'
 import Books from './Books'
 import Editbook from './Editbook'
 import Singlebook from './Singlebook'
-
+import Requiredauth from '../components/Requiredauth'
+import Login from './Login'
 const Mainroutes = () => {
 
 
@@ -18,9 +18,17 @@ const Mainroutes = () => {
     </Route>
     <Route path ="/books/:id" element={<Singlebook />}>
     </Route>
-    <Route path ="/books/:id/edit" element={<Editbook />}>
+    <Route path ="/books/:id/edit" element={
+    <Requiredauth>
+ <Editbook />
+
+    </Requiredauth>
+   
+    
+    
+    }>
     </Route>
-    <Route path ="/admin" element={<Login />}>
+    <Route path ="/login" element={<Login />}>
     </Route>
     <Route path='*' element={<h2>page not found</h2>}></Route>
 
