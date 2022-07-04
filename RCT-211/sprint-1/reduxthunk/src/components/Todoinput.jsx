@@ -4,18 +4,18 @@ import React,{useState} from 'react'
 import { useDispatch } from 'react-redux'
 import { addTodosSuccess,addTodosFailure,addTodosRequest, getTodosFailure } from '../redux/action'
 import axios from "axios"
-const Todoinput = ({getTodos}) => {
+const Todoinput = () => {
    const dispatch = useDispatch()
   
   const [task,settask] = useState("")
   const handleadd =()=>{
     const payload ={
-      task,status:false
+      task:task,status:false
     }
     dispatch(addTodosRequest())
     axios.post("/todos",payload)
-    .then(r=>dispatch(addTodosSuccess))
-    .then(()=>getTodos())
+    .then(r=>dispatch(addTodosSuccess(r.data)))
+   
 .catch(e=>dispatch(addTodosFailure(e)))
 
   }

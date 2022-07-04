@@ -28,14 +28,17 @@ dispatch(getTodoListSuccess(r.data))
       }
         
     },[])
-   console.log(todos)
+
+
+    
+  
   return (
     <div>Todos
 
      
       <br />
       <Addtodo />
-      <Todolist todolists={todos} />
+      <Todolist  todolists={todos} />
     </div>
   )
 }

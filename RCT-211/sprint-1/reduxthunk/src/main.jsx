@@ -7,7 +7,8 @@ import axios from "axios"
 
 import {store} from "./redux/store"
 
-axios.defaults.url= "http://localhost:8080"
+axios.defaults.baseURL= "http://localhost:8080"
+axios.defaults.headers.post["Content-Type"] ="application/json"
 
 
 

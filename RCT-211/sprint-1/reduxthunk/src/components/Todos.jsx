@@ -7,9 +7,9 @@ import { getTodosFailure, getTodosSuccess,getTodosRequest } from '../redux/actio
 import Todoinput from './Todoinput'
 const Todos = () => {
 const dispatch = useDispatch()
-const todos1  = useSelector(state=>state.todos)
+const todos1  = useSelector(store=>store.todos)
     useEffect(()=>{
-      if(todos1?.length==0){
+      if(todos1?.length===0){
         getTodos()
       }
     },[])
@@ -25,7 +25,7 @@ console.log(todos1)
 <Todoinput getTodos ={getTodos}/>
 
       {todos1.map((e)=>{
-        return <div>{e.task}</div>
+        return <div key={e.id}>{e.task}</div>
       })}
     </div>
   )

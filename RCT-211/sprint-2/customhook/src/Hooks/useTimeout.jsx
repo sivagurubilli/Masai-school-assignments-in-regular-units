@@ -14,9 +14,8 @@ const useTimeout = () => {
     }},[]);
     
     
-    return (
-   ready
-  )
+    return ready
+  
 }
 
 export default useTimeout

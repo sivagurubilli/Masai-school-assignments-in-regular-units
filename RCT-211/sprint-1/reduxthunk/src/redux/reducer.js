@@ -1,3 +1,7 @@
+
+import * as types from "./actiontypes"
+
+
 const initialstate ={
     todos:[],
     isLoading:false,
@@ -5,7 +9,6 @@ const initialstate ={
 
 }
 
-import * as types from "./actiontypes"
 
 const  reducer =  (state= initialstate,action)=>{
     const {type,payload} = action;
@@ -42,9 +45,11 @@ const  reducer =  (state= initialstate,action)=>{
                         }
             
                         case types.ADD_TODOS_SUCCESS:
+                            const newtodo = [...state.todos,payload]
                             return{
+                               
                                 ...state,
-                                todos:payload,
+                                todos:newtodo,
                                 isLoading:false,
                                 isError:false,
                             }

@@ -19,7 +19,7 @@ const[employees,setemployees] = useState([])
 
 
 const handlech =(e)=>{
-  const {type,id,checked,value} = e.target
+  const {type,id,checked,value} = e.target;
 if(type==="checkbox"){
     setemployee({...employee,[id]:checked})
 }else{

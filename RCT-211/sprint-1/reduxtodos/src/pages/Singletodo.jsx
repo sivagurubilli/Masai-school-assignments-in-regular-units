@@ -7,7 +7,7 @@ import { removeTodoFailure, removeTodoRequest, removeTodoSuccess, toggleTodoFail
 import axios from 'axios'
 const Singletodo = () => {
 const navigate = useNavigate()
-    const todos = useSelector(state=>state.todos)
+    const todos = useSelector(state=>state.todoreducer.todos)
 const dispatch = useDispatch()
   
     const {id} = useParams()

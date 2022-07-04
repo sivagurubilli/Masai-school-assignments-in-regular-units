@@ -1,11 +1,6 @@
 {
   "todos": [
     {
-      "task": "srija",
-      "status": true,
-      "id": 2
-    },
-    {
       "task": "vinnee",
       "status": false,
       "id": 3
