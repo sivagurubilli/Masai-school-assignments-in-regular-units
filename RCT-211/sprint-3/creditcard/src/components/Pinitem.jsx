@@ -1,0 +1,32 @@
+
+
+import React from 'react'
+import { forwardRef } from 'react'
+
+const Pinitem = forwardRef(({changeHandler,onBackSpaceHandler},ref) => {
+  
+  const handleKeyUp =(e)=>{
+   
+if(e.keyCode == 8){
+    onBackSpaceHandler(e);
+}else{
+    changeHandler(e)
+}
+
+  };
+
+
+    return (
+    <div>
+        
+
+
+<input  ref ={ref}
+         maxLength={4}
+        onKeyUp={handleKeyUp}
+         />
+    </div>
+  )
+})
+
+export default Pinitem
