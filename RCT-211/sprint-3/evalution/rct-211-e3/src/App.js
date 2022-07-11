@@ -28,7 +28,7 @@ function App() {
       check if the components are working properly */}
       <Button  />
       <br />
-      <Pagination />
+      <Pagination  total={5}/>
     </div>
   );
 }

@@ -1,27 +1,38 @@
+import { useState } from "react";
+import styled from "styled-components"
+
+
+
 
 export const Pagination = ({ total, selected, onPageChange }) => {
 
   var tot1 =[]
 
-for(var i=0;i<total;i++){
+for(var i=0;i<=total;i++){
+  if(i==0){
+    tot1.push("prev")
+  }
   tot1.push(i)
+  if(i==total){
+    tot1.push("next")
+  }
 }
 
 
 
   return (
-  <div className="pageContainer">
+    <PageWrapper>
+  <div className="pageContainer"  style={{display:"flex",}}>
     
      {tot1.map((e)=>(
-    <div style={{height:"30px",width:"30px" ,border:"1px solid grey"}}>
-
-    {e}
-    </div>
+    
+   <PageCell key ={e} e ={e} />
      ))
      }
 
 
   </div>
+  </PageWrapper>
   );
 
 
@@ -30,5 +41,30 @@ for(var i=0;i<total;i++){
 
 
 
+export const PageCell=((e)=>{
+  const [color,setcolor] = useState("white")
+
+  const handlech =()=>{
+    
+  setcolor("blue")
+  }
+    return (
+      <div style={{height:"30px",width:"50px" ,border:"1px solid grey",marginLeft:"20px" ,
+      justifyContent:'center',backgroundColor:color}}
+      
+      onClick={()=>(handlech())} 
+      >
+
+   {e.e}
+    </div>
+    )
+})
 
 
+
+
+const PageWrapper =  styled.div`
+   display:flex;
+margin-left:300px;
+margin-top:200px;
+`;
