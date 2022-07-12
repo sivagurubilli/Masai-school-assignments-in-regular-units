@@ -26,7 +26,7 @@ for(var i=0;i<=total;i++){
     
      {tot1.map((e)=>(
     
-   <PageCell key ={e} e ={e} />
+   <PageCell key ={e} e ={e}  selected={selected}/>
      ))
      }
 
@@ -41,21 +41,19 @@ for(var i=0;i<=total;i++){
 
 
 
-export const PageCell=((e)=>{
-  const [color,setcolor] = useState("white")
+export const PageCell=(({e,selected})=>{
 
-  const handlech =()=>{
+  const [color,setcolor] = useState("white")
     
-  setcolor("blue")
-  }
+ 
     return (
       <div style={{height:"30px",width:"50px" ,border:"1px solid grey",marginLeft:"20px" ,
       justifyContent:'center',backgroundColor:color}}
       
-      onClick={()=>(handlech())} 
+     
       >
 
-   {e.e}
+   {e}
     </div>
     )
 })
