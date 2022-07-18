@@ -14,20 +14,35 @@ import {
 Td,
   Tr,
 } from "@chakra-ui/react";
+import {Link} from "react-router-dom"
 
 import React from "react";
 import { useEffect } from "react";
 import { getcountry } from "../Redux/action";
 import {useDispatch,useSelector} from "react-redux"
-
+import {useSearchParams} from "react-router-dom"
 import { deletecountry } from "../Redux/action";
 import { editcountry } from "../Redux/action";
+import { useState } from "react";
+import {Navigate} from "react-router-dom"
 
 const Homepage = () => {
-const dispatch = useDispatch()
 
+ 
+     const dispatch = useDispatch()
+     const [searchParams,setsearchParams] =useSearchParams()
+     const urlsort = searchParams.get(sortBy)
+
+ const handlesort =(e)=>{
+      console.log(e)
+      setsortBy(e.target.value)
+    }
+
+
+  const [sortBy,setsortBy] = useState(urlsort||"")
+  
 const countries = useSelector(state =>state.countryreducer.countries)
-
+  
   useEffect(()=>{
    
       dispatch(getcountry())
@@ -36,7 +51,7 @@ const countries = useSelector(state =>state.countryreducer.countries)
   },[dispatch])
 
   const editcont=(id)=>{
-   dispatch(editcountry(id))
+   <Navigate to ="/country/${id}"/>
    
   }
 
@@ -45,18 +60,21 @@ const countries = useSelector(state =>state.countryreducer.countries)
     dispatch(deletecountry(id))
    
   }
-  return (
+  
+
+
+    return (
     <Box>
       <Flex padding="0 1rem" mb="2rem">
         <Text fontWeight="700" paddingRight="1rem">
           Sort by country population
         </Text>
-        <RadioGroup>
+        <RadioGroup onChange={handlesort}>
           <Stack direction="row">
-            <Radio data-cy="asc" value="asc">
+            <Radio data-cy="asc" value="asc" name ={sortBy =="asc"}>
               Ascending
             </Radio>
-            <Radio data-cy="desc" value="desc">
+            <Radio data-cy="desc" value="desc" name ={sortBy == "desc"}>
               Descending
             </Radio>
           </Stack>
@@ -87,9 +105,11 @@ const countries = useSelector(state =>state.countryreducer.countries)
   {c.population}
 </Td>
 <Td>
- <Button onClick={()=>editcont(c.id)}>
+  
+ <Button onClick={()=>editcont(c.id)} >
   edit
  </Button>
+
 </Td>
 <Td>
  <Button onClick={()=>deletecont(c.id)}>
