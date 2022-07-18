@@ -5,13 +5,12 @@ import './index.css'
 import {Provider} from "react-redux"
 import { BrowserRouter } from 'react-router-dom'
 import {ChakraProvider} from "@chakra-ui/react"
+import store from "./redux/store"
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <ChakraProvider>
-
-  
-  <BrowserRouter>
+ <BrowserRouter>
   <Provider store ={store}>
  <App />
   </Provider>

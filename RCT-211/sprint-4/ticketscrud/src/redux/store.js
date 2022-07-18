@@ -1,12 +1,18 @@
 
 
-import {legacy_createStore,combineReducers,composeEnhancers,compose, applyMiddleware
+import {legacy_createStore,
+    combineReducers,
+    compose,
+     applyMiddleware
 }from "redux"
 
 
-import {reducer as Authreducer } from "./authreducer"
-import {reducer as Appreducer} from "./appreducer"
-import {thunk} from "redux-thunk"
+import {reducer as Authreducer } from "./authreducer/reducer"
+import {reducer as Appreducer} from "./appreducer/reducer"
+
+import thunk from "redux-thunk"
+
+
 
 const composeEnhancers =typeof
  window === "object" && window.
