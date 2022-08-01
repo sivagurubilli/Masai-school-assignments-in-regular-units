@@ -6,7 +6,7 @@ const ProfileDataRow = ({ profile }) => {
   return (
     <tr data-cy={`profile-wrapper-${profile.id}`}>
       <td data-cy="profile-id">{profile.id}</td>
-      <td data-cy="profile-image"  src ={profile_pic}></td>
+      <td data-cy="profile-image"  src ={data.profile_pic}></td>
       <td data-cy="profile-first-name">{profile.first_name}</td>
       <td data-cy="profile-last-name">{profile.last_name}</td>
       <td data-cy="profile-email">{profile.email}</td>

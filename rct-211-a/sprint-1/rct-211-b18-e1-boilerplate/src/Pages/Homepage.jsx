@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect } from "react";
 import {useDispatch , useSelector} from "react-redux"
 import ProfileDataRow from "../Components/ProfileDataRow";
-import axios from "axios"
 import { getprofilereq, getprofilesucc, getprofilrfailure } from "../Redux/action";
 
 const Homepage = () => {
