@@ -23,7 +23,6 @@ const comingFrom = location.state?.from?.pathname || "/"
 
 
 
-
   const handlesubmit=(e)=>{
 e.preventDefault()
 
@@ -35,10 +34,10 @@ if(email ){
 
    }
    dispatch(loginRequest())
-axios.post("https://reqres.in/api/login",payload).then(r=>{
+axios.post("https://reqres.in/api/login",payload).then(r=>(
 
-return dispatch(loginsuccess(r.data))
-  }).catch(e=>dispatch(loginfailure(e)))
+dispatch(loginsuccess(r.data))
+  )).catch(e=>dispatch(loginfailure(e)))
 //  dispatch(login({email,password}))
 //  .then((r)=>{
    
@@ -70,6 +69,10 @@ value ={password} onChange={(e)=>setpassword(e.target.value)}
         </div>
         <button>Login</button>
       </form>
+
+
+
+
 
 
 
