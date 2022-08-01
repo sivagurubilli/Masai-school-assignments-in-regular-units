@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
+import axios from "axios";
 import {useDispatch , useSelector} from "react-redux"
 import ProfileDataRow from "../Components/ProfileDataRow";
 import { getprofilereq, getprofilesucc, getprofilrfailure } from "../Redux/action";
