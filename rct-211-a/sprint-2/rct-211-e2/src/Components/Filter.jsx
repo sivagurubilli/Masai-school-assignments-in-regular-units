@@ -8,7 +8,7 @@ const Filter = () => {
   const [searchParams,setsearchparams]= useSearchParams()
   const initcat = searchParams.getAll("cat")
 
-  const [category,setcategory] = useState(initcat||[])
+  const [category,setcategory] = useState([])
 
 const handlecat =(e)=>{
   const option = e.target.value;
