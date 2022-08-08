@@ -3,7 +3,7 @@
 import * as types from "./actiontypes"
 import axios from "axios"
 
-export const login =(payload)=>(dispatch)=>{
+export const login =(payload  )=>(dispatch)=>{
   dispatch({type:types.LOGIN_REQ});
   return axios({
     method:"post",
