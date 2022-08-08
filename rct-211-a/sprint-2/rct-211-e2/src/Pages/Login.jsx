@@ -42,7 +42,7 @@ if(email && password){
         <button type="submit" data-testid="login-submit" 
         
         >
-          Loading
+          Login
         </button>
       </form>
     </div>
