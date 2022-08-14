@@ -7,7 +7,7 @@ const Pinitem = forwardRef(({changeHandler,onBackSpaceHandler},ref) => {
   
   const handleKeyUp =(e)=>{
    
-if(e.keyCode == 8){
+  if(e.keyCode == 8){
     onBackSpaceHandler(e);
 }else{
     changeHandler(e)
