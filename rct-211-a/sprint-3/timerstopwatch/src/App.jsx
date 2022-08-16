@@ -51,7 +51,7 @@ const {sec1,hour1,min1,onStart,onStop,reset1,handlech} = useTimer()
   placeholder="SEC"
   id ="sec" 
   />
-  <button onClick={()=>setshow(!show)}>{show?null:"done"}</button>
+  <button onClick={()=>setshow(true)}>{show?null:"done"}</button>
   </form>
 )}
 
@@ -59,7 +59,7 @@ const {sec1,hour1,min1,onStart,onStop,reset1,handlech} = useTimer()
 
 {show ?(
   <div>
-    <div onClick={()=>setshow(!show)}>   
+    <div onClick={()=>setshow(false)}>   
       {hour1>1? hour1+"-"+"hours":hour1+"-"+"hour"}:{min1>1? min1+"-"+"mins":min1+"-"+"min"}:{sec1>1? sec1+"-"+"secs":sec1+"-"+"sec"}
  
     </div>
