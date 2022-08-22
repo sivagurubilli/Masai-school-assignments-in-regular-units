@@ -17,6 +17,7 @@ const dispatch = useDispatch()
   },[])
 
  const deletep = (id)=>{
+  
   dispatch(deletprod(id))
  }
  
