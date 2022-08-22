@@ -25,11 +25,24 @@ export const postprod =(payload)=>(dispatch)=>{
 
 export const editprod =(id,payload)=>(dispatch)=>{
    
-    console.log(payload)
+    
  dispatch({type:types.EDIT_PRODUCT_REQUEST})
  return axios.patch(`http://localhost:8080/products/${id}`, payload).then((r)=>{
     dispatch({type:types.EDIT_PRODUCT_SUCCESS,payload:r.data})
+    return types.EDIT_PRODUCT_SUCCESS
  }).catch((e)=>{
     dispatch({type:types.EDIT_PRODUCT_FAILURE})
  })
+}
+
+
+export const deletprod =(id)=>(dispatch)=>{
+  dispatch({type:types.DELETE_PRODUCT_REQUEST})
+
+  return axios.delete(`http://localhost:8008/products/${id}`).then((r)=>{
+    dispatch({type:types.DELETE_PRODUCT_SUCCESS,payload:r.data})
+    return types.DELETE_PRODUCT_SUCCESS
+  }).catch((e)=>{
+    dispatch({type:types.DELETE_PRODUCT_FAILURE})
+  })
 }

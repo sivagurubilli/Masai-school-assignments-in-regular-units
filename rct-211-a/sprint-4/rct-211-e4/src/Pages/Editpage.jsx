@@ -1,12 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import { useSelector ,useDispatch} from "react-redux";
-import { useSearchParams,useParams } from "react-router-dom";
+import { useSearchParams,useParams ,useNavigate } from "react-router-dom";
 import { editprod, getprod } from "../Redux/action";
 
 const Editpage = () => {
   const [searchParams] = useSearchParams()
   const dispatch = useDispatch()
+  const navigate  = useNavigate()
   const prod = useSelector((store)=>store.appreducer.products)
 const {id } = useParams()
 
@@ -16,16 +17,22 @@ const [price,setprice] = useState("")
 
 
 const handleup =(id)=>{
-  console.log(id)
-  if(currprod){
+ 
+ 
    const payload ={
     title:title,
     price:price
    }
-   dispatch(editprod(id,payload)).then(dispatch(getprod()))
-   console.log("ji")
-  }
+   
+   dispatch(editprod(id,payload)).then((r)=>{
+    if(r=="EDIT_PRODUCT_SUCCESS"){
+      dispatch(getprod())
+      navigate("/",{replace:true})
 }
+    })
+   }
+  
+  
 
   return (
     <div style={{ width: "fit-content", margin: "auto", fontSize: "20px" }}>
@@ -39,7 +46,7 @@ const handleup =(id)=>{
         <input data-cy="edit-product-price" type="number" onChange ={(e)=>setprice(e.target.value)} />
       </div>
       <div style={{ textAlign: "right", padding: "5px 0" }}>
-        <button data-cy="update-button" onClick ={()=>handleup()}>Update</button>
+        <button data-cy="update-button" onClick ={()=>handleup(id)}>Update</button>
       </div>
     </div>
   );

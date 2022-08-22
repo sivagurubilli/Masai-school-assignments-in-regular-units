@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useSelector,useDispatch } from "react-redux";
 import ProductCard from "../Components/ProductCard";
-import { getprod } from "../Redux/action";
+import { deletprod, getprod } from "../Redux/action";
 import { useNavigate } from "react-router-dom";
 const Productpage = () => {
 const dispatch = useDispatch()
@@ -16,13 +16,15 @@ const dispatch = useDispatch()
     }
   },[])
 
-
+ const deletep = (id)=>{
+  dispatch(deletprod(id))
+ }
  
   return (
     <div style={{ width: "100%" }}>
       <div>
   {prod.length>0 && prod.map((el)=>(
-    <ProductCard key ={el.id} item ={el} />
+    <ProductCard key ={el.id} item ={el}  deletep={deletep}/>
   ))}
         {/* 
         1. Map through the product list items, and render them inside the "ProductCard.jsx", by passing the data through props
