@@ -30,3 +30,5 @@ function generateInVoice(name,location,qty,price) {
 
 
 export { UserInfo, serveIn, serveFood, billNote, generateInVoice };
+
+///every  thing is ok
