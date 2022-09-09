@@ -1,0 +1,25 @@
+
+
+.nav{
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    background-color: aqua;
+    position: fixed;
+    height:70px;
+    width:100%;
+}
+
+.navleft{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    height: 70px;
+    margin-top: 30px;
+
+}
+
+.link{
+    padding-left: 20px;
+   text-decoration: none;
+}
