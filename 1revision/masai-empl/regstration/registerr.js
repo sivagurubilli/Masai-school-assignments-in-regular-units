@@ -12,7 +12,7 @@ let data ={
 
 }
 
-const url=" https://masai-api-mocker.herokuapp.com//auth/register"
+const url="https://masai-api-mocker.herokuapp.com/auth/register"
 const opt ={
     method:"POST",
     headers:{
