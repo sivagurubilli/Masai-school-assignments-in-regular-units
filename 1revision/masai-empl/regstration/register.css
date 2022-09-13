@@ -1,0 +1,28 @@
+
+
+.regbox{
+    height: auto;
+border: 2px solid;
+width: 300px;
+margin: 100px 300px;
+}
+
+.inputreg{
+    height: 30px;
+    width: 200px;
+    margin: 20px 40px;
+}
+
+.inputregdsc{
+height: 80px;
+width: 200px;
+margin: 20px 40px;
+}
+
+.button{
+    height: 30px;
+    width: 100px;
+    margin: 40px 50px;
+    background-color:blue;
+    color: white;
+}
